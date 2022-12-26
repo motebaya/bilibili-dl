@@ -35,18 +35,18 @@ class Merger
         /*
 Here: https://symfony.com/doc/current/components/console/helpers/progressbar.html
 */
-        $fullpath = __DIR__ . "/Media";
+        $fullpath = "./Media";
         if (!file_exists($fullpath)) {
             mkdir($fullpath);
         }
-        $fullpath = $fullpath . "/" . $output;
+        $fullpath = !strpos($output, "_audioOnly") && !strpos($output, "_videoOnly") ? $output : $fullpath . "/" . $output;
 
         if (!file_exists($fullpath)) {
             $progress = new ProgressBar(new ConsoleOutput(), 50);
             $progress->setFormat('%message%: %current%/%max% [%bar%] %percent:3s%% %memory:6s%');
             $progress->setMessage($output);
             $response = (new Client())->request("GET", $url, [
-                'sink' => $output,
+                'sink' => $fullpath,
                 'progress' => function (int $download_size, int $downloaded, int $upload_size, int $uploaded) use ($progress) {
                     $progress->setMaxSteps($download_size);
                     $progress->setProgress($downloaded);
