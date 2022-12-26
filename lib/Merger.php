@@ -25,7 +25,7 @@ class Merger
         )->map(
             [],
             new X264('aac', 'libx264'),
-            $output
+            "./Media/" . $output
         )->save();
         return true;
     }
@@ -39,7 +39,7 @@ Here: https://symfony.com/doc/current/components/console/helpers/progressbar.htm
         if (!file_exists($fullpath)) {
             mkdir($fullpath);
         }
-        $fullpath = !strpos($output, "_audioOnly") && !strpos($output, "_videoOnly") ? $output : $fullpath . "/" . $output;
+        $fullpath = !strpos($output, "_audioOnly") || !strpos($output, "_videoOnly") ? $output : $fullpath . "/" . $output;
 
         if (!file_exists($fullpath)) {
             $progress = new ProgressBar(new ConsoleOutput(), 50);
