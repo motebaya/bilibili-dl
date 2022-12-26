@@ -17,7 +17,7 @@ class BiliWeb
                 "headers" => BiliBili::$headers
             ]
         )->getBody();
-        if (preg_match("/window\.__INITIAL_STATE__\=(.*?);/i", (string)$page, $match)) {
+        if (preg_match("/window\.__INITIAL_STATE__\=(.*?);/i", html_entity_decode((string)$page), $match)) {
             $json = json_decode($match[1])->videoData;
             return [
                 "status" => 200,
@@ -27,7 +27,7 @@ class BiliWeb
                 "thumbnail" => $json->pic,
                 "author" => $json->owner->name,
                 "description" => $json->desc,
-                "page" => (string)$page
+                "page" => html_entity_decode((string)$page)
             ];
         } else {
             print "Failed get data : {$url}";
