@@ -25,7 +25,7 @@ just for download video from [bilibili.com](bilibili.com)
 
 ###  Note:
 + sadly here cant get max quality, must login or subscribe to bilibili for get more high quality
-+ and yah , i think 480P is not bad ,its better than when u downlad from mobile app u get full of WATERMARK and not all video posible to download
++ and yah , i think 480P is not bad ,its better than when u downlad from mobile app u get full of <b>WATERMARK</b> and not all video posible to download
 
 ![quality](https://github.com/motebaya/bilibili-dl/blob/main/src/2022-12-26%2004-40-51_crrop.png?raw=true)
 
