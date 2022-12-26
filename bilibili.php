@@ -16,8 +16,8 @@ include __DIR__ . "/lib/Merger.php";
 echo "
 [Author] @github/motebaya
 [Input] Batch/File ? url/single : ";
-echo "\n";
 $ext = trim(fgets(STDIN));
+echo "\n";
 if (preg_match("/(^https?\:\/\/)/", $ext, $match)) {
     /* remove this comment if want to change method to API */
     // (new Merger())->processApi(
