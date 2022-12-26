@@ -35,7 +35,12 @@ class Merger
         /*
 Here: https://symfony.com/doc/current/components/console/helpers/progressbar.html
 */
-        $fullpath = __DIR__ . "/" . $output;
+        $fullpath = __DIR__ . "/Media";
+        if (!file_exists($fullpath)) {
+            mkdir($fullpath);
+        }
+        $fullpath = $fullpath . "/" . $output;
+
         if (!file_exists($fullpath)) {
             $progress = new ProgressBar(new ConsoleOutput(), 50);
             $progress->setFormat('%message%: %current%/%max% [%bar%] %percent:3s%% %memory:6s%');
