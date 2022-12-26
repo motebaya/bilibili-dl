@@ -19,7 +19,7 @@ echo "
 $ext = trim(fgets(STDIN));
 echo "\n";
 if (preg_match("/(^https?\:\/\/)/", $ext, $match)) {
-    /* remove this comment if want to change method to API */
+    // remove this comment if want to change method to API 
     // (new Merger())->processApi(
     //     BiliBili::get_video_info(
     //         BiliBili::extract(
