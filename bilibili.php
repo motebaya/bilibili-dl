@@ -7,7 +7,7 @@ credit: https://github.com/motebaya
 */
 error_reporting(E_ALL);
 
-include "../vendor/autoload.php";
+include "vendor/autoload.php";
 
 include __DIR__ . "/lib/BiliBiliAPI.php";
 include __DIR__ . "/lib/BiliBiliWeb.php";
@@ -19,6 +19,7 @@ echo "
 echo "\n";
 $ext = trim(fgets(STDIN));
 if (preg_match("/(^https?\:\/\/)/", $ext, $match)) {
+    /* remove this comment if want to change method to API */
     // (new Merger())->processApi(
     //     BiliBili::get_video_info(
     //         BiliBili::extract(
@@ -57,23 +58,3 @@ if (preg_match("/(^https?\:\/\/)/", $ext, $match)) {
         }
     }
 }
-
-// $url = "https://www.bilibili.com/video/BV1784y1t7MR/";
-// $home = BiliBili::extract($url);
-// print_r($home);
-// $info = BiliBili::get_video_info($home);
-// print_r($info);
-// (new Merger())->processApi($info);
-// $mer = new Merger();
-// $extra = BiliWeb::extract("");
-// print_r($extra);
-// $info = BiliWeb::get_video_info($extra);
-// print_r($info);
-// $mer->process($info);
-
-// sample call
-// $mobile = "https://b23.tv/SjAttex";
-// $desktop = "https://www.bilibili.com/video/BV1784y1t7MR";
-// $web = BiliWeb::extract($desktop);
-// $play = BiliWeb::get_video_info($web);
-// print_r($play);
