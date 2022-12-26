@@ -32,6 +32,7 @@ just for download video from [bilibili.com](bilibili.com)
 + and the download batch is not recomended when using [ffmpeg](https://github.com/PHP-FFMpeg/PHP-FFMpeg)
 
 ## Requirement:
++ PHP 7.4.33 version.
 + https://github.com/PHP-FFMpeg/PHP-FFMpeg
 + https://github.com/guzzle/guzzle
 + https://github.com/symfony/symfony
