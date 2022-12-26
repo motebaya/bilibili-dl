@@ -3,7 +3,7 @@
 just for download video from [bilibili.com](bilibili.com)
 
 ## usage:
-
+```
 [Input] Batch/File ? url/single : https://www.bilibili.com/video/<id>/
 [extractWebPage] ...
 [checkUrl] https://www.bilibili.com/video/<id>/
@@ -15,7 +15,7 @@ just for download video from [bilibili.com](bilibili.com)
 喝水就喝百岁珊 🤤_audioOnly.mp3: 191440/191440 [============================] 100% 6.0 MiB
 [Merger] To: 喝水就喝百岁珊 🤤.mp4
 [done] saved!
-
+```
  + just input bilibili url or url list.
  + if use without api, that will be saving 3 file:
     + audio only
