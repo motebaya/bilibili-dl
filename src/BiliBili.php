@@ -22,11 +22,19 @@ class BiliBili extends Extractor
         }
     }
 
+    /**
+     * init execute
+     *
+     * @param string $urlOrUSer
+     * @param string $methodType
+     * @param boolean $bookmark
+     * @return void
+     */
     public function execute(
         string $urlOrUSer,
         string $methodType,
         bool $bookmark = false
-    ) {
+    ): void {
         if (array_key_exists($methodType, $this->method_list)) {
             if (!$bookmark) {
                 if (preg_match($this->regex, $urlOrUSer, $bvid)) {
@@ -55,6 +63,13 @@ class BiliBili extends Extractor
         }
     }
 
+    /**
+     * get all bookmark list and all videos list from selected bookmark
+     *
+     * @param string $userid
+     * @param string $methodType
+     * @return void
+     */
     private function _fromBookmark(string $userid, string $methodType)
     {
         if (preg_match('/^[0-9]+$/', $userid)) {
