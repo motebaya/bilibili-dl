@@ -144,23 +144,6 @@ class Init
     }
 
     /**
-     * hyperlink for cover
-     * here: https://gist.github.com/egmontkob/eb114294efbcd5adb1944c9f3cb5feda
-     * @param string $url
-     * @param string $text
-     * @return void
-     */
-    protected function create_hyperlink(string $url, string $text): void
-    {
-        echo sprintf(
-            "\033]8;;%s\033\\%S\033]8;;\033\\",
-            $url,
-            $text
-        );
-    }
-
-
-    /**
      * human readable fileszie
      * https://stackoverflow.com/questions/15188033/human-readable-file-size
      *
@@ -175,28 +158,6 @@ class Init
             "%s %s",
             round($length / (1024 ** $i), 2),
             $sizes[$i]
-        );
-    }
-
-    public function gStrings(int $length = 15)
-    {
-        $string = sprintf(
-            "%s%s%s",
-            implode('', range('0', '9')),
-            implode('', range('a', 'z')),
-            implode('', range('Z', 'Z'))
-        );
-        return substr(
-            str_shuffle(
-                str_repeat(
-                    $string,
-                    (int)ceil(
-                        $length / strlen($string)
-                    )
-                )
-            ),
-            1,
-            $length
         );
     }
 }
