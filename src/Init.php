@@ -7,7 +7,6 @@ namespace BiliDL;
 use \GuzzleHttp\Client;
 use \GuzzleHttp\Cookie\CookieJar;
 use \GuzzleHttp\Promise\Promise;
-use \GuzzleHttp\Cookie\SetCookie;
 
 class Init
 {
