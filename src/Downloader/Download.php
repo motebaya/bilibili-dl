@@ -70,7 +70,7 @@ class Download extends Init
                 }
             } else {
                 if (isset($conf['filename'])) {
-                    $filename = $this->cleanFilename($conf['filename']);
+                    $filename = sprintf("%s/%s", $this->defaultdir, $this->cleanFilename($conf['filename']));
                 } else {
                     throw new \Exception(
                         sprintf(
@@ -99,7 +99,7 @@ class Download extends Init
         $this->progress->setMessage(sprintf("Fetch:%s", $conf['type']), 'message');
         try {
             $this->client->get($url, [
-                'sink' => sprintf("%s/%s", $this->defaultdir, $filename),
+                'sink' => $filename,
                 'progress' => function (int $download_size, int $downloaded) {
                     $this->progress->setMaxSteps($download_size);
                     $this->progress->setProgress($downloaded);
