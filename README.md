@@ -52,25 +52,25 @@ composer i
 
 * Method list
 
-  `webpage`:
+  - `webpage`:
 
-  direct scrape from url video,
-  this method will be download separated media (video and audio).
-  then merger it using [PHP-FFMpeg](https://github.com/PHP-FFMpeg/PHP-FFMpeg)
+    direct scrape from url video,
+    this method will be download separated media (video and audio).
+    then merger it using [PHP-FFMpeg](https://github.com/PHP-FFMpeg/PHP-FFMpeg)
 
-  if you see an error:
+    if you see an error:
 
-  ```
-  Fatal error: Uncaught Alchemy\BinaryDriver\Exception\ExecutableNotFoundException: Executable not found, proposed :
-  ```
+    ```
+    Fatal error: Uncaught Alchemy\BinaryDriver\Exception\ExecutableNotFoundException: Executable not found, proposed :
+    ```
 
-  try change `ffmpeg` and `ffprobe` default path to [this line](src/Downloader/Merger.php#L24) with your binary path.see [official docs](https://github.com/PHP-FFMpeg/PHP-FFMpeg#documentation).
+    try change `ffmpeg` and `ffprobe` default path to [this line](src/Downloader/Merger.php#L24) with your binary path.see [official docs](https://github.com/PHP-FFMpeg/PHP-FFMpeg#documentation).
 
-  e.g : `https://www.bilibili.com/video/BV<videoid>`
+    e.g : `https://www.bilibili.com/video/BV<videoid>`
 
-  `api`: download using [bilibili api](https://socialsisteryi.github.io/bilibili-API-collect/)
+  - `api`: download using [bilibili api](https://socialsisteryi.github.io/bilibili-API-collect/)
 
-  `site`: download from external downloader website: [youtube4kdownloader](https://youtube4kdownloader.com/)
+  - `site`: download from external downloader website: [youtube4kdownloader](https://youtube4kdownloader.com/)
 
 - Example Usage:
 
@@ -94,7 +94,7 @@ this is optional, for used to get more high quality only.
 
 ## Issue
 
-- Not all stream audio or video from webpage always work, sometime you'il see unavailabe response. e.g:
+- not all stream audio or video from webpage always work, sometime you'il see unavailabe response. e.g:
 
 ```<HTML><HEAD><TITLE>Error</TITLE></HEAD><BODY>
 An error occurred while processing your request.<p>
@@ -119,7 +119,7 @@ and
 An error occurred from remote video site. Please try with other download link
 ```
 
-- and last, for Api's. it's seem not work with hotspot network. bcs im try it in my mobile it's work, but in my PC stuck loading. idk, why ??
+- and last, for Api's. it's seem not work with hotspot network. bcs im try it in my mobile network it's work as well, but in my PC stuck loading. idk, why ??
 
 ## Refference
 
