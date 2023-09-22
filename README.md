@@ -41,7 +41,10 @@ cd bilibili-dl
 composer i
 ```
 
+`php7.4.33`: https://www.php.net/releases/#7.4.33
+
 `composer`: https://getcomposer.org/download/
+
 `main`: `php7.4 cli.php`
 
 ## Usage (CLI):
