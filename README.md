@@ -14,7 +14,7 @@ PHP cli Tool for download videos from bilibili.com
 
 </div>
 
-### Introduction
+## Introduction
 
 CLI tool for downloading videos from the bilibili.com website. although you can download directly from the mobile app, but you'il see annoying watermark and limited video quality (unless you subscribe to bilibili).
 
@@ -23,17 +23,17 @@ for example see:
 ```mermaid
 graph TB
 A[bilibili url] -->  B[Without Login]
-B ---> C[32/480p,16/360P]
+B ---> C[32/480p, 16/360P]
 A ---> D[With Login]
-D ---> E[80/1080P,64/720P,32/480P,16/360P]
+D ---> E[80/1080P, 64/720P, 32/480P, 16/360P]
 D ---> F((Subscribe))
-F ---> G[120/2160P,116/1080P60FPs,80/1080P,64/720P,32/480P,16/360P]
+F ---> G[120/2160P, 116/1080P60FPs, 80/1080P, 64/720P, 32/480P, 16/360P]
 
 ```
 
 so, to get high quality from webpage you need a login and set cookie. see [How to get and set cookies](#Cookies)
 
-### Install
+## Install
 
 ```bash
 git clone https://github.com/motebaya/bilibili-dl
@@ -44,7 +44,7 @@ composer i
 `composer`: https://getcomposer.org/download/
 `main`: `php7.4 cli.php`
 
-### Usage (CLI):
+## Usage (CLI):
 
 - `-u`,`--url/userid`: url video or user id
 - `-b`, `--bookmark`: action to download from bookmark/favorite list
@@ -57,6 +57,14 @@ composer i
   direct scrape from url video,
   this method will be download separated media (video and audio).
   then merger it using [PHP-FFMpeg](https://github.com/PHP-FFMpeg/PHP-FFMpeg)
+
+  if you see an error:
+
+  ```
+  Fatal error: Uncaught Alchemy\BinaryDriver\Exception\ExecutableNotFoundException: Executable not found, proposed :
+  ```
+
+  try change `ffmpeg` and `ffprobe` default path to [this line](src/Downloader/Merger.php#L24) with your binary path.see [official docs](https://github.com/PHP-FFMpeg/PHP-FFMpeg#documentation).
 
   e.g : `https://www.bilibili.com/video/BV<videoid>`
 
@@ -74,10 +82,9 @@ composer i
 
   - `php7.4 cli.php -u 32638440 -t api -b`
 
-downloaded media will saved in current directory as name "src/Downloader/media/media title.[ext]".
-you can move it manually.
+downloaded media will saved in default folder "src/Downloader/media" with name "media-title.[ext]", you can move it manually.
 
-### Cookies
+## Cookies
 
 this is optional, for used to get more high quality only.
 
@@ -85,7 +92,7 @@ this is optional, for used to get more high quality only.
    ![example](src/Images/cookies-get-example.png)
 2. copy your cookies and put (overwrite) to file [cookies](cookies)
 
-### Issue
+## Issue
 
 - Not all stream audio or video from webpage always work, sometime you'il see unavailabe response. e.g:
 
@@ -114,7 +121,7 @@ An error occurred from remote video site. Please try with other download link
 
 - and last, for Api's. it's seem not work with hotspot network. bcs im try it in my mobile it's work, but in my PC stuck loading. idk, why ??
 
-### refference
+## Refference
 
 - https://github.com/MoyuScript/bilibili-api
 - https://github.com/SocialSisterYi/bilibili-API-collect
